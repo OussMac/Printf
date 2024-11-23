@@ -67,3 +67,5 @@ It takes the argument pointer `va_list ap;`, and the type of the current arg\
 This is how it knows how mush to move forward in memory to reach the next arg.
 
 ![](attachment/272ea4b1358f0a1b3b272f9a3cdb12b3.png)
+
+ba9i khdam fih (under construction...)
