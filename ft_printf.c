@@ -6,7 +6,7 @@
 /*   By: oimzilen <oimzilen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 22:33:58 by oimzilen          #+#    #+#             */
-/*   Updated: 2024/11/18 02:53:51 by oimzilen         ###   ########.fr       */
+/*   Updated: 2024/11/23 11:35:29 by oimzilen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	print_args(va_list ap, char specefier, int fd)
 	else if (specefier == 's')
 		count += ft_putstr_fd(va_arg(ap, char *), fd);
 	else if (specefier == 'd' || specefier == 'i')
-		count += ft_putnbr_fd(va_arg(ap, int), 1);
+		count += ft_putnbr_fd(va_arg(ap, int), 1);  // i 
 	else if (specefier == 'u')
 		count += ft_putuns_fd(va_arg(ap, unsigned int), fd);
 	else if (specefier == 'x')
@@ -36,6 +36,8 @@ static int	print_args(va_list ap, char specefier, int fd)
 	}
 	else if (specefier == '%')
 		count += ft_putchar_fd('%', fd);
+	else
+		ft_putstr_fd("Error: Invalid specefier.\n", fd);
 	return (count);
 }
 
@@ -43,10 +45,12 @@ int	ft_printf(const char *format, ...)
 {
 	int		count;
 	int		i;
+	int		fd;
 	va_list	ap;
 
 	i = 0;
 	count = 0;
+	fd = 1;
 	va_start(ap, format);
 	while (format[i])
 	{
@@ -55,10 +59,10 @@ int	ft_printf(const char *format, ...)
 			i++;
 			if (format[i] == '\0')
 				return (0);
-			count += print_args(ap, format[i], 1);
+			count += print_args(ap, format[i], fd);
 		}
 		else
-			count += ft_putchar_fd(format[i], 1);
+			count += ft_putchar_fd(format[i], fd);
 		i++;
 	}
 	va_end(ap);
