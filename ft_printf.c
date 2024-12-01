@@ -6,7 +6,7 @@
 /*   By: oimzilen <oimzilen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 22:33:58 by oimzilen          #+#    #+#             */
-/*   Updated: 2024/12/01 23:25:33 by oimzilen         ###   ########.fr       */
+/*   Updated: 2024/12/01 23:28:59 by oimzilen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	print_args(va_list ap, char specefier, int fd)
 	else if (specefier == 's')
 		count += ft_putstr_fd(va_arg(ap, char *), fd);
 	else if (specefier == 'd' || specefier == 'i')
-		count += ft_putnbr_fd(va_arg(ap, int), 1);  // i 
+		count += ft_putnbr_fd(va_arg(ap, int), 1);
 	else if (specefier == 'u')
 		count += ft_putuns_fd(va_arg(ap, unsigned int), fd);
 	else if (specefier == 'x')
