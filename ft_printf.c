@@ -6,7 +6,7 @@
 /*   By: oimzilen <oimzilen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 22:33:58 by oimzilen          #+#    #+#             */
-/*   Updated: 2024/11/23 11:35:29 by oimzilen         ###   ########.fr       */
+/*   Updated: 2024/12/01 23:25:33 by oimzilen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	print_args(va_list ap, char specefier, int fd)
 	else if (specefier == '%')
 		count += ft_putchar_fd('%', fd);
 	else
-		ft_putstr_fd("Error: Invalid specefier.\n", fd);
+		ft_putstr_fd("(Error: Invalid specefier.)", fd);
 	return (count);
 }
 

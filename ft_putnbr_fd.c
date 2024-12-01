@@ -6,7 +6,7 @@
 /*   By: oimzilen <oimzilen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 21:52:20 by oimzilen          #+#    #+#             */
-/*   Updated: 2024/11/17 22:08:10 by oimzilen         ###   ########.fr       */
+/*   Updated: 2024/11/24 16:45:21 by oimzilen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int	ft_putnbr_fd(int n, int fd)
 	}
 	else if (n > 9)
 	{
-		count += ft_putnbr_fd((n / 10), fd);
+		count += ft_putnbr_fd((n / 10), fd);  //12 3  12 1
+		// +1 +1 +1 
 		count += ft_putnbr_fd((n % 10), fd);
 	}
 	else if (n < 0)
