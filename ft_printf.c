@@ -6,7 +6,7 @@
 /*   By: oimzilen <oimzilen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 22:33:58 by oimzilen          #+#    #+#             */
-/*   Updated: 2024/12/01 23:28:59 by oimzilen         ###   ########.fr       */
+/*   Updated: 2024/12/03 03:12:47 by oimzilen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	ft_printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == '\0')
-				return (0);
+				return (count);
 			count += print_args(ap, format[i], fd);
 		}
 		else
